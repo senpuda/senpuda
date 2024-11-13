@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Classes Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .classe {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            width: 200px;
+            display: inline-block;
+        }
+        .classe h3 {
+            margin: 0;
+            text-align: center;
+        }
+        .atributos, .metodos {
+            margin-top: 10px;
+        }
+        .relacionamento {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diagrama de Classes Simplificado</h1>
+
+    <!-- Classe Mesa -->
+    <div class="classe">
+        <h3>Mesa</h3>
+        <div class="atributos">
+            <p><strong>id:</strong> int</p>
+            <p><strong>número:</strong> int</p>
+            <p><strong>status:</strong> string</p>
+        </div>
+        <div class="metodos">
+            <p><strong>reservar():</strong> void</p>
+            <p><strong>liberar():</strong> void</p>
+        </div>
+    </div>
+
+    <!-- Classe Comanda -->
+    <div class="classe">
+        <h3>Comanda</h3>
+        <div class="atributos">
+            <p><strong>id:</strong> int</p>
+            <p><strong>mesa:</strong> Mesa</p>
+            <p><strong>pratos:</strong> List<Prato></p>
+        </div>
+        <div class="metodos">
+            <p><strong>adicionarPrato(prato):</strong> void</p>
+            <p><strong>fecharComanda():</strong> void</p>
+        </div>
+    </div>
+
+    <!-- Classe Prato -->
+    <div class="classe">
+        <h3>Prato</h3>
+        <div class="atributos">
+            <p><strong>id:</strong> int</p>
+            <p><strong>nome:</strong> string</p>
+            <p><strong>preço:</strong> double</p>
+        </div>
+    </div>
+
+    <!-- Classe Pagamento -->
+    <div class="classe">
+        <h3>Pagamento</h3>
+        <div class="atributos">
+            <p><strong>id:</strong> int</p>
+            <p><strong>comanda:</strong> Comanda</p>
+            <p><strong>valorTotal:</strong> double</p>
+        </div>
+        <div class="metodos">
+            <p><strong>processarPagamento():</strong> void</p>
+        </div>
+    </div>
+
+    <!-- Relacionamentos -->
+    <div class="relacionamento">
+        <h3>Relacionamentos:</h3>
+        <ul>
+            <li>Mesa <strong>tem</strong> Comanda</li>
+            <li>Comanda <strong>contém</strong> Prato</li>
+            <li>Comanda <strong>tem</strong> Pagamento</li>
+        </ul>
+    </div>
+
+</body>
+</html>
